@@ -1,4 +1,96 @@
 extends ../layouts/default-layout
 
 block container
- 
+  include ../partials/mixins
+  //- Carousel
+  main
+    .main__carousel
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          +carousel-indicators('0')(class='active')
+          +carousel-indicators('1')
+          +carousel-indicators('2')
+        .carousel-inner
+          +carousel-inner('../assets/images/carousel1.jpg')(class='active')
+          +carousel-inner('../assets/images/carousel2.jpg')
+          +carousel-inner('../assets/images/carousel3.jpg')
+        +carousel-control('prev', 'Previous')(class='carousel-control-prev')
+        +carousel-control('next', 'Next')(class='carousel-control-next')
+        
+    .main__jumbotron
+      .jumbotron
+        h1.display-4 Hello, world!
+        p.lead This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+        hr.my-4
+        p It uses utility classes for typography and spacing to space content out within the larger container.
+        p.lead
+          a.btn.btn-primary.btn-lg(href='#' role='button') Learn more
+      
+    .main__application
+      .container-fluid
+        .text-center
+          h1.display-4 Build your application
+          hr.my-4
+          p Welcome my Bootstrap 4 tutorials. Bootstrap is an open-source and free front-end library with HTML and CSS based design
+        .row.text-center
+          .col-xs-12.col-sm-6.col-md-4
+              +main-application('React', 'Build the latest version of React')
+                i.fab.fa-react
+          .col-xs-12.col-sm-6.col-md-4
+              +main-application('Angular', 'Build your Website and Front-end Application')
+                i.fab.fa-angular
+          .col-sm-12.col-md-4
+              +main-application('Html5, Css3, Javascript', 'Customize your web UI with Html5, Css3, Javascript')
+                i.fab.fa-html5
+                i.fab.fa-css3
+                i.fab.fa-js
+        hr.my-4
+
+    .main__lorem
+      .container-fluid
+        .row
+          +main__lorem__text
+          +main__lorem__pic('../assets/images/picture.jpg')
+        .row
+          +main__lorem__pic('../assets/images/picture1.jpg')
+          +main__lorem__text
+        hr.my-4
+      
+    .maim__collapse
+      button.btn.btn-info(type='button' data-toggle='collapse' data-target='#emoji' style='width: 100%;')
+        | Click for fun
+      #emoji.collapse
+        .container-fluid
+          br
+          .row.text-center
+            .col-sm-6.col-md-3
+              img(src='../assets/images/gif/blinkEyes.gif' width='100' height='100')
+            .col-sm-6.col-md-3
+              img(src='../assets/images/gif/blinkGirl.gif' width='100' height='100')
+            .col-sm-6.col-md-3
+              img(src='../assets/images/gif/faceHaha.gif' width='100' height='100')
+            .col-sm-6.col-md-3
+              img(src='../assets/images/gif/haha.gif' width='100' height='100')
+        hr.my-4
+
+    .main__team
+      .container-fluid
+        .text-center
+          h1.display-4 Meet our team members
+        .row
+          +main__team('../assets/images/lamanhquoc.png', 'Lam Anh Quoc')
+          +main__team('../assets/images/johndoe.png', 'Johndoe')
+          +main__team('../assets/images/Natasha.png', 'Natasha')
+        hr.my-4
+    
+    .main__social
+      .container-fluid
+        .row.text-center
+          .col-12
+            h2 Contact us
+          .col-12.social
+            +social(class='fab fa-facebook')
+            +social(class='fab fa-twitter')
+            +social(class='fab fa-google-plus-g')
+            +social(class='fab fa-instagram')
+            +social(class='fab fa-youtube')
