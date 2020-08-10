@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title pug-sass-basic
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="./css/styles.css")
+  body
+    block header
+      include ../partials/header
+    block container
+    block footer
+      include ../partials/footer
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src='./js/scripts.js')
